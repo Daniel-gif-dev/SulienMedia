@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Sulien Realty Media helps real estate agents grow with content and marketing.">
+  <title>Sulien Realty Media</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Animated Ambient Glow Blobs -->
+  <div class="blob-container">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <header class="logo">
+      <h1><a href="#Home">SULIEN.</a></h1>
+    </header>
+    
+    <nav class="pages">
+      <a class="page1" href="#Home">Home</a>
+      <a class="page2" href="#services">Services</a>
+      <a class="page3" href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="main">
+    <div class="bg-watermark">SULIEN</div>
+    <section id="Home" class="hero">
+      <h2>Turn Your Real Estate Page Into a <span class="text-gradient">Client Machine</span></h2>
+      <p>We help realtors attract leads through powerful content</p>
+      <button onclick="scrollToContact()">Get Started</button>
+    </section>
+  </div>
+
+  <!-- Content Section Wrap -->
+  <div class="content-wrapper">
+    
+    <h1 class="Headings reveal">OUR SERVICES</h1>
+    <section id="services" class="services">
+      <div class="card">
+        <h3>Content Creation</h3>
+        <p>High-quality posts and reels for your listings that your target audience would find visually appealing.</p>
+      </div>
+      <div class="card">
+        <h3>Social Media Management</h3>
+        <p>We handle posting, persuasive captions, and growth</p>
+      </div>
+      <div class="card">
+        <h3>Content Calendar & Strategy</h3>
+        <p>Plans that turn views into inquiries. A Detailed content Calendar to ensure smooth execution and consistent engagement.</p>
+      </div>
+      <div class="card">
+        <h3>Consulting & Audit</h3>
+        <p>One-on-one sessions to optimize your social media presence</p>
+      </div>
+    </section>
+
+    <h1 class="Headings reveal">PACKAGES</h1>
+    <section id="Packages" class="Packages">
+      <div class="card">
+        <h3>Starter</h3>
+        <p>Perfect for new agents looking to establish their online presence.</p>
+        <ul>
+          <li>6 posts per month</li>
+          <li>1 reel per month</li>
+          <li>Basic content strategy and calendar</li>
+          <li>General Platform Audit</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Standard</h3>
+        <p>For agents looking to scale their online presence and generate more leads.</p>
+        <ul>
+          <li>12 posts per month</li>
+          <li>2 reels per month</li>
+          <li>Advanced content strategy and calendar</li>
+          <li>Comprehensive Platform Audit</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Superior</h3>
+        <p>For established agents seeking a comprehensive social media management solution.</p>
+        <ul>
+          <li>20 posts per month</li>
+          <li>4 reels per month</li>
+          <li>Custom content strategy and calendar</li>
+          <li>In-depth Platform Audit with personalized recommendations</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-card reveal">
+        <h2 class="Headings">CONTACT US</h2>
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <div class="submit-container">
+          <button onclick="sendMessage()">ENTER!</button>
+          <p id="status"></p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <ul class="contact-info">
+      <li><a href="https://wa.me/2347012638498" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
+      <li><a href="https://www.instagram.com/sulienmedia" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="mailto:info@sulienmedia.com">Email</a></li>
+    </ul>
+    <p>© 2026 Sulien Realty Media</p>
+  </footer>
+
+</body>
+</html>
