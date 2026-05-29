@@ -12,6 +12,10 @@ body {
     position: relative;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Scrollbar Customization */
 ::-webkit-scrollbar {
     width: 10px;
