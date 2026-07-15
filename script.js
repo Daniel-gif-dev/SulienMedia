@@ -1,125 +1,114 @@
-// Wait for the page to fully load
-document.addEventListener("DOMContentLoaded", function () {
-
-    // ===== 1. SCROLL TO CONTACT =====
-    function scrollToContact() {
-        const target = document.getElementById("contact");
-        if (!target) return;
-        const targetPosition = target.offsetTop;
-        const startPosition = window.scrollY || window.pageYOffset;
-        const distance = targetPosition - startPosition;
-
-        let startTime = null;
-        const duration = 800; // ⬅️ Increase this for slower scroll (in ms)
-
-        function animationScroll(currentTime) {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-
-            const run = ease(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-
-            if (timeElapsed < duration) {
-                requestAnimationFrame(animationScroll);
-            }
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Header scroll effect
+    const header = document.querySelector('.main-header');
+    
+    const handleScroll = () => {
+        if (window.scrollY > 40) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initially
 
-        // Easing function (makes it smooth, not robotic)
-        function ease(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t + b;
-            t--;
-            return -c / 2 * (t * (t - 2) - 1) + b;
-        }
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksAll = document.querySelectorAll('.nav-link');
 
-        requestAnimationFrame(animationScroll);
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
     }
 
-    // Expose to window so onclick="scrollToContact()" works
-    window.scrollToContact = scrollToContact;
-
-
-    // ===== 2. SEND MESSAGE (FRONTEND ONLY) =====
-    window.sendMessage = function () {
-        const name = document.querySelector('input[type="text"]').value;
-        const email = document.querySelector('input[type="email"]').value;
-        const message = document.querySelector('textarea').value;
-        const status = document.getElementById("status");
-
-        // Simple validation
-        if (name === "" || email === "" || message === "") {
-            status.textContent = "Ensure all Fields are Filled Please.";
-            status.style.color = "#f43f5e";
-            return;
-        }
-
-        // Fake success message (since no backend yet)
-        status.textContent = "Message sent Thank youuu! We'll get back to you.";
-        status.style.color = "#10b981";
-
-        // Clear inputs
-        document.querySelector('input[type="text"]').value = "";
-        document.querySelector('input[type="email"]').value = "";
-        document.querySelector('textarea').value = "";
+    // 3. Scroll Fade-in Animation (Intersection Observer)
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeObserverOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
-
-    // ===== 3. NAVBAR ACTIVE LINK & STICKY HEADER ON SCROLL =====
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".pages a");
-    const topbar = document.querySelector(".topbar");
-
-    function handleScroll() {
-        const scrollPosition = window.scrollY || window.pageYOffset;
-
-        // Sticky Header class toggle
-        if (topbar) {
-            if (scrollPosition > 20) {
-                topbar.classList.add("scrolled");
-            } else {
-                topbar.classList.remove("scrolled");
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
             }
-        }
+        });
+    }, fadeObserverOptions);
 
-        // Active Link highlighting
-        let current = "";
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionId = section.getAttribute("id");
-            if (sectionId && scrollPosition >= sectionTop - 180) {
-                current = sectionId;
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+
+    // 4. Sunrise Theme Background Warmth Transition
+    const sections = document.querySelectorAll('section');
+    
+    const themeObserverOptions = {
+        root: null,
+        threshold: 0.2, // Trigger when 20% of section is visible
+        rootMargin: '-10% 0px -40% 0px' // Adjust bounds for smoother entry triggers
+    };
+
+    const themeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.getAttribute('id');
+                
+                // Reset body classes
+                document.body.classList.remove('warm-1', 'warm-2', 'warm-3');
+                
+                // Add class matching scroll depth
+                if (sectionId === 'services') {
+                    document.body.classList.add('warm-1');
+                } else if (sectionId === 'how-it-works') {
+                    document.body.classList.add('warm-2');
+                } else if (sectionId === 'pricing' || sectionId === 'results') {
+                    document.body.classList.add('warm-3');
+                }
+            }
+        });
+    }, themeObserverOptions);
+
+    sections.forEach(section => {
+        themeObserver.observe(section);
+    });
+
+    // 5. Connect Pricing Cards and SVG Path Highlight
+    const pricingCards = document.querySelectorAll('.price-card');
+    const sunPathElement = document.getElementById('sun-path');
+
+    pricingCards.forEach((card, index) => {
+        card.addEventListener('mouseenter', () => {
+            if (sunPathElement) {
+                sunPathElement.style.strokeWidth = '2.5px';
+                sunPathElement.style.opacity = '1';
+                
+                if (index === 0) sunPathElement.style.stroke = 'var(--accent-gold)';
+                if (index === 1) sunPathElement.style.stroke = 'var(--accent-amber)';
+                if (index === 2) sunPathElement.style.stroke = 'var(--text-primary)';
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === `#${current}`) {
-                link.classList.add("active");
+        card.addEventListener('mouseleave', () => {
+            if (sunPathElement) {
+                sunPathElement.style.strokeWidth = '1.5px';
+                sunPathElement.style.opacity = '0.6';
+                sunPathElement.style.stroke = 'var(--accent-gold)';
             }
         });
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Trigger once on load to initialize
-
-
-    // ===== 4. SIMPLE FADE-IN ANIMATION ON SCROLL =====
-    const animElements = document.querySelectorAll(".card, .reveal");
-
-    function revealElements() {
-        const windowHeight = window.innerHeight;
-
-        animElements.forEach(el => {
-            const elTop = el.getBoundingClientRect().top;
-
-            if (elTop < windowHeight - 50) {
-                el.classList.add("show");
-            }
-        });
-    }
-
-    // Run once on load to animate elements already in the viewport
-    revealElements();
-    window.addEventListener("scroll", revealElements);
+    });
 });
