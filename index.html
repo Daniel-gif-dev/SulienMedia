@@ -1,129 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Sulien Realty Media helps real estate agents grow with content and marketing.">
-  <title>Sulien Realty Media</title>
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sulien Realty Media | Premium Real Estate Content Partner</title>
+    <meta name="description" content="We don't film, we edit. Sulien is a remote-first real estate content strategy and video editing agency. Optimize your real estate brand and grow your pages.">
+    <!-- Google Fonts: Fraunces (Headings, bold and italics) & Inter (Body, navigation, and labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="sunrise-theme">
 
-  <!-- Animated Ambient Glow Blobs -->
-  <div class="blob-container">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-
-  <!-- Top Bar -->
-  <div class="topbar">
-    <header class="logo">
-      <h1><a href="#Home">SULIEN.</a></h1>
-    </header>
-    
-    <nav class="pages">
-      <a class="page1" href="#Home">Home</a>
-      <a class="page2" href="#services">Services</a>
-      <a class="page3" href="#contact">Contact</a>
-    </nav>
-  </div>
-
-  <!-- Hero Section -->
-  <div class="main">
-    <div class="bg-watermark">SULIEN</div>
-    <section id="Home" class="hero">
-      <h2>Turn Your Real Estate Page Into a <span class="text-gradient">Client Machine</span></h2>
-      <p>We help realtors attract leads through powerful content</p>
-      <button onclick="scrollToContact()">Get Started</button>
-    </section>
-  </div>
-
-  <!-- Content Section Wrap -->
-  <div class="content-wrapper">
-    
-    <h1 class="Headings reveal">OUR SERVICES</h1>
-    <section id="services" class="services">
-      <div class="card">
-        <h3>Social Media Management</h3>
-        <p>We handle posting, persuasive captions, and growth</p>
-      </div>
-      <div class="card">
-        <h3>Content Calendar & Strategy</h3>
-        <p>Plans that turn views into inquiries. A Detailed content Calendar to ensure smooth execution and consistent engagement.</p>
-      </div>
-      <div class="card">
-        <h3>Consulting & Audit</h3>
-        <p>One-on-one sessions to optimize your social media presence</p>
-      </div>
-    </section>
-
-    <h1 class="Headings reveal">PACKAGES</h1>
-    <section id="Packages" class="Packages">
-      <a href="https://paystack.shop/pay/xdo7fdvy9y"> <div class="card">
-        <h3>Starter</h3>
-        <p>Perfect for new agents looking to establish their online presence.</p>
-        <ul>
-          <li>6 posts per month</li>
-          <li>1 reel per month</li>
-          <li>Basic content strategy and calendar</li>
-          <li>General Platform Audit</li>
-        </ul>
-      </div>
-      </a>
-
-      <a href="https://paystack.shop/pay/5iojdospdd"> <div class="card">
-        <h3>Standard</h3>
-        <p>For agents looking to scale their online presence and generate more leads.</p>
-        <ul>
-          <li>12 posts per month</li>
-          <li>2 reels per month</li>
-          <li>Advanced content strategy and calendar</li>
-          <li>Comprehensive Platform Audit</li>
-        </ul>
-      </div>
-      </a>
-
-      <a href="https://paystack.shop/pay/6qt8hsc9j9"><div class="card">
-        <h3>Superior</h3>
-        <p>For established agents seeking a comprehensive social media management solution.</p>
-        <ul>
-          <li>20 posts per month</li>
-          <li>4 reels per month</li>
-          <li>Custom content strategy and calendar</li>
-          <li>In-depth Platform Audit with personalized recommendations</li>
-        </ul>
-      </div>
-      </a>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="contact-card reveal">
-        <h2 class="Headings">CONTACT US</h2>
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <div class="submit-container">
-          <button onclick="sendMessage()">ENTER!</button>
-          <p id="status"></p>
+    <!-- Header / Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                    <line x1="50" y1="10" x2="50" y2="22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="50" y1="90" x2="50" y2="78" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="10" y1="50" x2="22" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="90" y1="50" x2="78" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span>Sulien</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#services" class="nav-link">What We Do</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#results" class="nav-link">Results</a>
+            </nav>
+            <a href="#cta" class="btn btn-nav">Start pilot</a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
-      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container fade-in">
+            <div class="hero-text-content">
+                <div class="hero-badge">
+                    <span class="badge-line"></span>
+                    <span class="badge-label">REMOTE-FIRST PARTNER</span>
+                </div>
+                <h1 class="hero-headline">
+                    Real estate content, <br>
+                    <span class="serif-italic">handled.</span>
+                    <div class="sun-wrapper">
+                        <svg class="sun-icon-hero" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="2.5" />
+                            <circle cx="50" cy="50" r="10" fill="currentColor" />
+                            <!-- Subtle rays -->
+                            <line x1="50" y1="12" x2="50" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <line x1="50" y1="88" x2="50" y2="76" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <line x1="12" y1="50" x2="24" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <line x1="88" y1="50" x2="76" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <line x1="23" y1="23" x2="31.5" y2="31.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <line x1="77" y1="77" x2="68.5" y2="68.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <line x1="77" y1="23" x2="68.5" y2="31.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <line x1="23" y1="77" x2="31.5" y2="68.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </h1>
+                <p class="hero-subheadline">
+                    We edit your footage, script your strategies, and manage your distribution. Remote-first execution for modern realtors. <em>We don't film, we edit.</em>
+                </p>
+                <div class="hero-actions">
+                    <a href="#cta" class="btn btn-primary">Start your free pilot</a>
+                    <a href="#services" class="btn btn-secondary">See our work</a>
+                </div>
+            </div>
+            
+            <div class="hero-graphic-container">
+                <div class="hero-sun-graphic">
+                    <div class="glow-ring ring-1"></div>
+                    <div class="glow-ring ring-2"></div>
+                    <div class="glow-ring ring-3"></div>
+                    <div class="graphic-sun-core"></div>
+                    <!-- Mockup Preview overlay representing editing before/after -->
+                    <div class="editing-mockup">
+                        <div class="mockup-header">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                            <span class="mockup-title">sulien_editor.prproj</span>
+                        </div>
+                        <div class="mockup-preview">
+                            <div class="video-overlay-text">Raw Footage &rarr; Sunborn Polish</div>
+                            <div class="timeline-visual">
+                                <div class="timeline-bar bar-video"></div>
+                                <div class="timeline-bar bar-audio"></div>
+                                <div class="timeline-bar bar-effects"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-  </div>
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">OUR SERVICES</span>
+                <h2 class="section-title">What we do to <span class="serif-italic">grow your page</span></h2>
+                <p class="section-subtitle">A complete remote content engine designed specifically for active real estate agents.</p>
+            </div>
+            
+            <div class="services-grid fade-in">
+                <!-- Card 1: Audit -->
+                <div class="service-card">
+                    <div class="card-icon-wrapper">
+                        <!-- Pillars / Columns Icon -->
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="20" x2="20" y2="20" />
+                            <line x1="4" y1="4" x2="20" y2="4" />
+                            <line x1="6" y1="4" x2="6" y2="20" />
+                            <line x1="12" y1="4" x2="12" y2="20" />
+                            <line x1="18" y1="4" x2="18" y2="20" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Brand Audit</h3>
+                    <p class="card-desc">We diagnose your current positioning, hooks, retention rates, and profile aesthetics to establish your core growth pillars.</p>
+                </div>
 
-  <footer>
-    <ul class="contact-info">
-      <li><a href="https://wa.me/2347012638498" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
-      <li><a href="https://www.instagram.com/sulienmedia" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-      <li><a href="mailto:osasairen35@gmail.com">Email</a></li>
-    </ul>
-    <p>© 2026 Sulien Realty Media</p>
-  </footer>
+                <!-- Card 2: Calendar & Strategy -->
+                <div class="service-card">
+                    <div class="card-icon-wrapper">
+                        <!-- Calendar Icon -->
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Content Calendar</h3>
+                    <p class="card-desc">Receive weekly prompts, scripted hooks, and structured storyboards. You know exactly what to say when you hit record.</p>
+                </div>
 
+                <!-- Card 3: Video Editing -->
+                <div class="service-card highlighted">
+                    <div class="card-icon-wrapper">
+                        <!-- Compass Icon -->
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Premium Video Editing</h3>
+                    <p class="card-desc">Dynamic cuts, smooth pacing, custom sound design, and elegant text animations. Turn raw phone footage into luxury cinematic reels.</p>
+                </div>
+
+                <!-- Card 4: Social Management -->
+                <div class="service-card">
+                    <div class="card-icon-wrapper">
+                        <!-- Refresh Arrows Icon -->
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Social Management</h3>
+                    <p class="card-desc">Caption copywriting, search optimization, scheduling, and distribution across Instagram, YouTube Shorts, and TikTok.</p>
+                </div>
+
+                <!-- Card 5: Paid Ads -->
+                <div class="service-card">
+                    <div class="card-icon-wrapper">
+                        <!-- Megaphone Icon -->
+                        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Lead Ads</h3>
+                    <p class="card-desc">Amplify your top-performing organic videos with targeted localized meta ads to capture active buyer and seller leads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">ONBOARDING CHECKLIST</span>
+                <h2 class="section-title">Our remote <span class="serif-italic">workflow</span></h2>
+                <p class="section-subtitle">No long meetings. We fit seamlessly into your existing weekly routine.</p>
+            </div>
+            
+            <div class="steps-container fade-in">
+                <!-- Step 1 -->
+                <div class="step-row">
+                    <div class="step-number-col">
+                        <span class="step-label">STEP 01</span>
+                    </div>
+                    <div class="step-content-col">
+                        <h3 class="step-title">Initial Audit & Strategy</h3>
+                        <p class="step-desc">We analyze your previous posts, target market, and top competitors. We compile your visual guide, tone metrics, and core content pillars.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-row">
+                    <div class="step-number-col">
+                        <span class="step-label">STEP 02</span>
+                    </div>
+                    <div class="step-content-col">
+                        <h3 class="step-title">Weekly Content Scripting</h3>
+                        <p class="step-desc">Every Monday, we deliver custom-tailored scripts, hooks, and shoot guidelines directly to your dashboard. All you need to do is film on your phone.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-row">
+                    <div class="step-number-col">
+                        <span class="step-label">STEP 03</span>
+                    </div>
+                    <div class="step-content-col">
+                        <h3 class="step-title">Upload & Edit</h3>
+                        <p class="step-desc">Drop your raw clips into our shared drive. Within 48 hours, our editing team transforms them into highly engaging, brand-aligned videos.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-row">
+                    <div class="step-number-col">
+                        <span class="step-label">STEP 04</span>
+                    </div>
+                    <div class="step-content-col">
+                        <h3 class="step-title">Review & Auto-Publish</h3>
+                        <p class="step-desc">Approve the edits with a single click. We draft optimization copy, schedule posting times, and launch distribution across all key networks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">SIMPLE TRANSPARENT PRICING</span>
+                <h2 class="section-title">Choose your <span class="serif-italic">light arc</span></h2>
+                <p class="section-subtitle">Flexible packages designed for single agents and small real estate teams.</p>
+            </div>
+            
+            <div class="pricing-wrapper fade-in">
+                <!-- Background connecting Sun Path Arc -->
+                <div class="pricing-arc-svg-container">
+                    <svg class="pricing-arc-svg" viewBox="0 0 1000 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="sun-path" d="M50 150 Q 500 -50 950 150" stroke="#C9A227" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.6"/>
+                        <!-- Moving indicator representing the sun path -->
+                        <circle cx="50" cy="150" r="6" fill="#E8823A">
+                            <animate attributeName="cx" values="50;500;950;50" dur="20s" repeatCount="indefinite" />
+                            <animate attributeName="cy" values="150;35;150;150" dur="20s" repeatCount="indefinite" />
+                        </circle>
+                    </svg>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Sunrise Card (Cream Background) -->
+                    <div class="price-card tier-sunrise">
+                        <div class="price-card-header">
+                            <span class="tier-label">SUNRISE</span>
+                            <div class="tier-price">₦70,000<span class="price-period">/mo</span></div>
+                            <p class="tier-tagline">Start growing your organic pipeline.</p>
+                        </div>
+                        <ul class="price-features">
+                            <li>8 Custom Edited Videos / mo</li>
+                            <li>Weekly Hooks & Script Outlines</li>
+                            <li>Standard Caption & Keyword SEO</li>
+                            <li>Shared Delivery Folder</li>
+                            <li>48h Delivery Turnaround</li>
+                        </ul>
+                        <div class="price-action">
+                            <a href="#cta" class="btn btn-outline-gold">Start Sunrise Pilot</a>
+                        </div>
+                    </div>
+
+                    <!-- Daylight Card (Light Gold Background - Recommended) -->
+                    <div class="price-card tier-daylight recommended">
+                        <div class="recommended-badge">RECOMMENDED</div>
+                        <div class="price-card-header">
+                            <span class="tier-label">DAYLIGHT</span>
+                            <div class="tier-price">₦140,000<span class="price-period">/mo</span></div>
+                            <p class="tier-tagline">Complete organic branding engine.</p>
+                        </div>
+                        <ul class="price-features">
+                            <li><strong>16 Custom Edited Videos / mo</strong></li>
+                            <li>Full Hook Scripting & Storyboards</li>
+                            <li>Complete Social Scheduling & Auto-Publishing</li>
+                            <li>Monthly Growth Strategy & Review Call</li>
+                            <li>Dedicated Video Editor</li>
+                            <li>Priority 24h Turnaround</li>
+                        </ul>
+                        <div class="price-action">
+                            <a href="#cta" class="btn btn-primary">Start Daylight Pilot</a>
+                        </div>
+                    </div>
+
+                    <!-- Peak Card (Deeper Gold Background) -->
+                    <div class="price-card tier-peak">
+                        <div class="price-card-header">
+                            <span class="tier-label">PEAK</span>
+                            <div class="tier-price">₦230,000<span class="price-period">/mo</span></div>
+                            <p class="tier-tagline">Maximum dominance & localized lead generation.</p>
+                        </div>
+                        <ul class="price-features">
+                            <li><strong>24+ Custom Videos / mo</strong> (Short & Long Form)</li>
+                            <li>Total Brand Omnipresence & Custom Thumbnail Design</li>
+                            <li>Weekly Live Strategy & Hook Review Calls</li>
+                            <li>Meta Ad Setup & Continuous Optimization</li>
+                            <li>Lead Magnet Copywriting & Strategy</li>
+                            <li>24/7 Slack / WhatsApp Direct Access</li>
+                        </ul>
+                        <div class="price-action">
+                            <a href="#cta" class="btn btn-outline-dark">Claim Peak Slot</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alacarte-container">
+                    <a href="#cta" class="alacarte-link">Looking for custom deliverables? <span>View our à la carte pricing &rarr;</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results / Case Studies Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-eyebrow">CASE STUDIES</span>
+                <h2 class="section-title">Sunborn brand <span class="serif-italic">impact</span></h2>
+                <p class="section-subtitle">Real results from agents who moved their content strategy remote.</p>
+            </div>
+
+            <div class="results-container fade-in">
+                <!-- Case study item -->
+                <div class="case-study-card">
+                    <div class="case-study-visual">
+                        <div class="case-study-sun-glow"></div>
+                        <div class="stats-badge-grid">
+                            <div class="stat-badge">
+                                <span class="stat-number">+314%</span>
+                                <span class="stat-label">Engagement</span>
+                            </div>
+                            <div class="stat-badge highlight">
+                                <span class="stat-number">1.2M+</span>
+                                <span class="stat-label">Organic Views</span>
+                            </div>
+                            <div class="stat-badge">
+                                <span class="stat-number">14</span>
+                                <span class="stat-label">Inbound Leads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-info">
+                        <div class="client-profile">
+                            <div class="client-meta">
+                                <h4 class="client-name">Marcus Vance</h4>
+                                <span class="client-title">Vance Luxury Group | Los Angeles</span>
+                            </div>
+                        </div>
+                        <blockquote class="client-quote">
+                            "Before Sulien, I spent 6 hours a week editing poorly-lit reels. Now, I simply film on my iPhone during open houses, upload the clips, and let them handle the rest. My views tripled and I closed two listings directly from Instagram inquiries last month alone."
+                        </blockquote>
+                        <div class="case-timeline">
+                            <span>Pilot Client &bull; 90 Day Impact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section (Dark Section) -->
+    <section id="cta" class="cta-section dark-contrast">
+        <div class="cta-grid-bg">
+            <div class="grid-line line-v-1"></div>
+            <div class="grid-line line-v-2"></div>
+            <div class="grid-line line-h-1"></div>
+        </div>
+        
+        <div class="cta-container fade-in">
+            <h2 class="cta-title">Ready to grow your page <span class="serif-italic">without the hassle?</span></h2>
+            <p class="cta-subtitle">Start your 7-day free pilot. We'll script, edit, and optimize 2 videos for you completely free. No card required.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/message/SULIENREALTY" target="_blank" rel="noopener" class="btn btn-cta-whatsapp">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    </svg>
+                    Chat on WhatsApp
+                </a>
+                <a href="https://instagram.com/sulienairen" target="_blank" rel="noopener" class="btn btn-cta-instagram">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                    DM on Instagram
+                </a>
+            </div>
+            
+            <p class="cta-alternative">Or email us directly at <a href="mailto:sulienrealty@gmail.com" class="cta-email-link">sulienrealtymedia@gmail.com</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-logo-col">
+                <a href="#" class="logo footer-logo">
+                    <svg class="logo-sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="16" fill="none" stroke="currentColor" stroke-width="3"/>
+                        <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                        <line x1="50" y1="10" x2="50" y2="22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="50" y1="90" x2="50" y2="78" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span>Sulien</span>
+                </a>
+                <p class="footer-tagline">Real estate content, handled.</p>
+            </div>
+            
+            <div class="footer-links-col">
+                <h5 class="footer-heading">NAVIGATION</h5>
+                <a href="#services">What We Do</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing Packages</a>
+                <a href="#results">Case Studies</a>
+            </div>
+
+            <div class="footer-contact-col">
+                <h5 class="footer-heading">CONNECT</h5>
+                <a href="https://wa.me/message/SULIENREALTY" target="_blank" rel="noopener">WhatsApp Chat</a>
+                <a href="https://instagram.com/sulienairen" target="_blank" rel="noopener">Instagram</a>
+                <a href="mailto:sulienrealtymedia@gmail.com">sulienrealtymedia@gmail.com</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p class="copyright">&copy; 2026 Sulien Realty Media. All rights reserved.</p>
+                <p class="footer-disclaimer">We do not film, we edit. Remote services delivered worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
 </body>
 </html>
